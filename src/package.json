@@ -1,19 +1,12 @@
 {
   "name": "angular2-BasicTraining",
   "version": "1.0.0",
-  "scripts": {
-    //runs the compiler and a server at the same time, both in "watch mode"
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    //runs the lite-server, a light-weight, static file server with excellent support for Angular apps that use routing
-    "lite": "lite-server",
-    //called by npm automatically after it successfully completes package installation. This script installs the TypeScript definition files defined in typings.json
-    "postinstall": "typings install",
-    //runs the TypeScript compiler once
+  "scripts": {  
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",    
+    "lite": "lite-server",    
+    "postinstall": "typings install",    
     "tsc": "tsc",
-    //runs the TypeScript compiler in watch mode; the process keeps running,
-    // awaiting changes to TypeScript files and recompiling when it sees them
-    "tsc:w": "tsc -w",
-    //runs the typings tool separately
+    "tsc:w": "tsc -w",    
     "typings": "typings"
   },
   "license": "MIT",
