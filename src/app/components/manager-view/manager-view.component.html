@@ -1,9 +1,12 @@
-<div>
-    <ul>
-        <li *ngFor="let empl of employees"  (click)="onSelect(empl)">
-          {{empl.ID}} - {{empl.Name}} {{empl.Department}}
-        </li>        
-    </ul>
+<div>    
+    
+    <md-list>
+        <md-list-item *ngFor="let empl of employees"  (click)="onSelect(empl)">
+            <h3 md-line> {{empl.Name}} </h3>
+            <span  md-line> ID : {{empl.ID}}</span>
+            <span  md-line> Department :  {{empl.Department}} </span>            
+        </md-list-item>
+    </md-list>
     <div *ngIf="selectedEmployee">
         <label>name: </label>
         <input [value]="selectedEmployee.Name"
