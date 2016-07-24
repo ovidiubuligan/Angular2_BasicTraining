@@ -1,7 +1,12 @@
 <div>
     <ul>
-        <li *ngFor="let empl of employees" >
+        <li *ngFor="let empl of employees"  (click)="onSelect(empl)">
           {{empl.ID}} - {{empl.Name}} {{empl.Department}}
-        </li>
+        </li>        
     </ul>
+    <div *ngIf="selectedEmployee">
+        <label>name: </label>
+        <input [value]="selectedEmployee.Name"
+               (input)="selectedEmployee.Name=$event.target.value"   placeholder="Name"/> <!-- shorter version  [(ngModel)]="selectedEmployee.Name"  -->
+    </div>
 </div>

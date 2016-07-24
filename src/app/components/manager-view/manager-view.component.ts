@@ -9,11 +9,15 @@ import { EmployeeService } from '../../services/employee.service';
 })
 export class ManagerViewComponent { 
      employees :Employee[] =[]
+     selectedEmployee: Employee;
 
      constructor(private _employeeService: EmployeeService){
         _employeeService.getEmployees()
                         .then(emps => {this.employees = emps; console.log(emps.length)});
      }
 
+     onSelect(selectedEmp:Employee){
+       this.selectedEmployee = selectedEmp;
+     }
   
 }
