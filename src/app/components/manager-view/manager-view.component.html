@@ -1,15 +1,14 @@
-<div>    
+
+<div class='flex-container'>    
     
-    <md-list>
+    <md-list class='flex-item' style="height:100%;overflow-y:auto">
         <md-list-item *ngFor="let empl of employees"  (click)="onSelect(empl)">
             <h3 md-line> {{empl.Name}} </h3>
             <span  md-line> ID : {{empl.ID}}</span>
             <span  md-line> Department :  {{empl.Department}} </span>            
-        </md-list-item>
+        </md-list-item>      
     </md-list>
-    <div *ngIf="selectedEmployee">
-        <label>name: </label>
-        <input [value]="selectedEmployee.Name"
-               (input)="selectedEmployee.Name=$event.target.value"   placeholder="Name"/> <!-- shorter version  [(ngModel)]="selectedEmployee.Name"  -->
+    <div *ngIf="selectedEmployee" class='flex-item'>
+        <employee-edit [employee]="selectedEmployee"></employee-edit>
     </div>
 </div>

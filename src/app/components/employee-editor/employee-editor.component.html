@@ -1,0 +1,6 @@
+<div>        
+    <label>name: </label>
+    <input [value]="editedEmployee.Name"
+           (input)="editedEmployee.Name=$event.target.value"   placeholder="Name"/> <!-- shorter version  [(ngModel)]="selectedEmployee.Name"  -->
+    <button md-raised-button (click)="doUpdate()">Update</button>
+</div>
